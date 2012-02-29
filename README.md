@@ -6,16 +6,16 @@ A simple node-based static file server, for quickly standing up an HTTP server t
 Usage
 -----
 
-  $ node ./index.js 
+    $ node ./index.js 
 
 I suggest adding the following to your <code>~/.profile</code> or  <code>~/.login</code> or wherever your shell normally looks when you login.
 
-  alias serverhere="node ~/path/to/this/repo/serverHere/index.js $@"
+    alias serverhere="node ~/path/to/this/repo/serverHere/index.js $@"
 
 ..then you just need
 
-  $ serverhere
-  serving on localhost:3000; out of % /Users/sfoster/dev/node/serverHere
+    $ serverhere
+    serving on localhost:3000; out of % /Users/sfoster/dev/node/serverHere
 
 Options
 -------
@@ -26,19 +26,19 @@ There's just a few simple options. serverHere uses the [optimist node module](ht
 
 The path to the directory to treat as the document root for the server (defaults to <code>`pwd`</code>)
 
-  $ node ./index.js --docRoot /some/other/directory
+    $ node ./index.js --docRoot /some/other/directory
   
 ### port
 
-port number to listen on (defaults to 3000) 
+The port number to listen on (defaults to 3000) 
 
-  $ node ./index.js --port 8888
+    $ node ./index.js --port 8888
 
 ### hostname
 
 The hostname to listen for requests on (defaults to localhost)
 
-  $ node ./index.js --hostname project1.local
+    $ node ./index.js --hostname project1.local
   
 ### logger
 
@@ -46,5 +46,5 @@ The logging style, defaults to 'short'. Passes straight through to [connect's lo
 
 Any of the options can be combined: 
 
-  $ node ./index.js --docRoot /some/other/directory --port 8080 --logging tiny
+    $ node ./index.js --docRoot /some/other/directory --port 8080 --logging tiny
 
