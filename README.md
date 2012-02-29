@@ -1,7 +1,7 @@
 serverHere
 ==========
 
-A simple node-based static file server, for quickly standing up an HTTP server to browser from your current directory.
+A simple node-based static file server, for quickly standing up an HTTP server to browse from your current directory.
 
 Usage
 -----
@@ -15,7 +15,10 @@ I suggest adding the following to your <code>~/.profile</code> or  <code>~/.logi
 ..then you just need
 
     $ serverhere
-    serving on localhost:3000; out of % /Users/sfoster/dev/node/serverHere
+    serving on localhost:3000; out of % /Users/sfoster/dev/somesuch
+
+Now you can point your browser (or curl or whatever) at <code>http://localhost:3000/</code> and get a directory listing of <code>/Users/sfoster/dev/somesuch</code>. 
+Common file types should be served with the right mime-types, so for quickly testing some HTML/ajax stuff you should be good to go.
 
 Options
 -------
@@ -24,7 +27,7 @@ There's just a few simple options. serverHere uses the [optimist node module](ht
 
 ### docRoot
 
-The path to the directory to treat as the document root for the server (defaults to <code>`pwd`</code>)
+The path to the directory to treat as the document root for the server (defaults to your current working directory.)
 
     $ node ./index.js --docRoot /some/other/directory
   
