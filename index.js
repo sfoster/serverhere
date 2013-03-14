@@ -41,6 +41,7 @@ if(require.main === module){
       url: '/',
       index: true,
       dot: false,
+      cache: false
     });
 
     http.createServer(function(req, res){
