@@ -1,4 +1,5 @@
-var st = require('st'),
+var connect = require('connect'),
+    dirlisting = require('./directory'),
     http = require('http'),
     cwd = process.cwd(),
     argv = require('optimist').argv,
@@ -36,20 +37,10 @@ if(require.main === module){
     console.log(helpStr);
   } else {
 
-    var mount = st({
-      path: appConfig.docRoot,
-      url: '/',
-      index: true,
-      dot: false,
-      cache: false
-    });
-
-    http.createServer(function(req, res){
-      if( mount(req, res)) return;
-      if(appConfig.verbose) {
-        console.log("Unable to handle request for " + req.url);
-      }
-    }).listen(appConfig.port, appConfig.hostname);
+    connect()
+      .use(connect.static(appConfig.docRoot))
+      .use(dirlisting(appConfig.docRoot))
+      .listen(appConfig.port, appConfig.hostname);
 
   }
   console.log('serving on %s:%s; out of %', appConfig.hostname, appConfig.port, appConfig.docRoot);

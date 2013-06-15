@@ -4,7 +4,7 @@
   "description": "A simple node-based static file server, for quickly standing up an HTTP server to browse from your current directory.",
   "main": "index.js",
   "dependencies": {
-    "st": "0.1.2",
+    "connect": "~2.3.9",
     "optimist": "~0.2.6"
   },
   "devDependencies": {},
