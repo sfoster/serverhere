@@ -35,6 +35,8 @@ var certFilename;
 
 
 if(require.main === module){
+  process.title = 'serverhere'; // make us easier to find and kill
+
   if("help" in argv){
     var helpStr = "Usage: node index.js [options]\n\n";
       helpStr += "Options:\n";
